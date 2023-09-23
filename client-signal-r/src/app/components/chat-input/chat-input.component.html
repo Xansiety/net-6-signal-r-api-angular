@@ -1,0 +1,19 @@
+<form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
+  <div class="row">
+    <div class="col-9">
+      <input
+        type="text"
+        [(ngModel)]="content"
+        [ngModelOptions]="{standalone: true}"
+        required
+        class="form-control"
+        placeholder="Send message"
+      />
+    </div>
+    <div class="col-3">
+      <div class="d-grid">
+        <button class="btn btn-dark btn-block" type="submit" [disabled]="!messageForm.valid" >Send</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Private chat with {{ toUser }}</h5>
+  <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" ></button>
+</div>
+<div class="modal-body">
+    <div class="card border-secondary">
+        <div class="card-header h3 text-muted text-center">Messages</div>
+        <div class="card-body">
+             <app-chat-messages [messages]="notificationService.privateMessages"></app-chat-messages>
+        </div>
+        <div class="card-footer">
+            <app-chat-input (sendMessageEmitter)="sendPrivateMessage($event)"></app-chat-input>
+        </div>
+    </div>
+</div>
